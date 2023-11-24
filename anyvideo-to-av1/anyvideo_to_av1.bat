@@ -3,7 +3,7 @@ chcp 65001 >nul 2>&1
 setlocal EnableDelayedExpansion
 
 :: Set terminal title
-title Fileditch Sender - Developed at gh@Henrique-Coder/windows-sendto-tools
+title Any video to AV1 - Developed at gh@Henrique-Coder/windows-sendto-tools
 
 REM Set input file path from the first argument and the default output file name prefix
 set "input_file_path=%~1"
