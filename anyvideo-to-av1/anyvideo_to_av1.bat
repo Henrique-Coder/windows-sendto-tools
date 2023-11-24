@@ -1,6 +1,9 @@
 @echo off
 chcp 65001 >nul 2>&1
-setlocal enabledelayedexpansion
+setlocal EnableDelayedExpansion
+
+:: Set terminal title
+title Fileditch Sender - Developed at gh@Henrique-Coder/windows-sendto-tools
 
 REM Set input file path from the first argument and the default output file name prefix
 set "input_file_path=%~1"
