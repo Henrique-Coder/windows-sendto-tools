@@ -18,26 +18,12 @@ if not exist "%input_file_path%" (
 rem Checks if "ffmpeg.exe" and "nircmd.exe" exist in the PATH or in the current directory
 where /q "ffmpeg.exe"
 if errorlevel 1 (
-    echo. && echo [error] "ffmpeg.exe" does not exist in PATH or current directory (download it from https://ffmpeg.org/download.html)
-    goto endapp
+    echo. && echo [error] "ffmpeg.exe" does not exist in PATH or current directory (download it from https://ffmpeg.org/download.html) && goto endapp
 )
 where /q "nircmd.exe"
 if errorlevel 1 (
-    echo. && echo [error] "nircmd.exe" does not exist in PATH or current directory (download it from https://www.nirsoft.net/utils/nircmd.html)
-    goto endapp
+    echo. && echo [error] "nircmd.exe" does not exist in PATH or current directory (download it from https://www.nirsoft.net/utils/nircmd.html) && goto endapp
 )
-
-rem TODO: Get video codec and video bitrate
-:: set "ffmpeg_get_codec_command"="ffprobe.exe" -v error -select_streams a:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 "%input_file_path%"
-:: set "ffmpeg_get_bitrate_command"="ffprobe.exe" -v error -select_streams a:0 -show_entries stream=bit_rate -of default=noprint_wrappers=1:nokey=1 "%input_file_path%"
-
-rem TODO: If audio codec is opus, keep the bitrate, else convert to opus with 128kbps
-:: if "%audio_codec%"=="libopus" (
-::     set "audio_bitrate=%audio_bitrate%"
-:: ) else (
-::     set "audio_codec=libopus"
-::     set "audio_bitrate=128"
-:: )
 
 rem Set video codec, audio codec and audio bitrate
 set "video_codec=libsvtav1"
