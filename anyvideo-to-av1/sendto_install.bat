@@ -3,7 +3,7 @@ chcp 65001 >nul 2>&1
 setlocal
 
 set "mainBatchScript=%~dp0anyvideo_to_av1.bat"
-set "shortcutName=Transcodes any video to AV1.lnk"
+set "shortcutName=Transcodes the video to AV1.lnk"
 
 set "assetsDir=%~dp0assets"
 set "iconFile=%assetsDir%\icon.ico"
