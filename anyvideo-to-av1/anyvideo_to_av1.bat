@@ -11,8 +11,7 @@ set "default_output_filename_prefix=-libsvtav1"
 
 rem Checks if the input file exists
 if not exist "%input_file_path%" (
-    echo. && echo [error] Input file does not exist. Try again with a valid file.
-    goto endapp
+    echo. && echo [error] Input file does not exist. Try again with a valid file. && goto endapp
 )
 
 rem Checks if "ffmpeg.exe" and "nircmd.exe" exist in the PATH or in the current directory
@@ -34,16 +33,16 @@ rem Set output file name prefix
 :output_filename_prefix_choice
 echo. && set /p "output_filename_prefix=Output filename prefix (default: "%default_output_filename_prefix%") [allowed: alphanumeric, underline, hyphen and dot]: "
 if "%output_filename_prefix%"=="" (
-    set "output_filename_prefix=%default_output_filename_prefix%"
-) && goto extension_choice
+    set "output_filename_prefix=%default_output_filename_prefix%" && goto extension_choice
+)
 
 rem Set output file extension
 :extension_choice
 cls && echo. && echo Output filename prefix (default: "%default_output_filename_prefix%") [allowed: alphanumeric, underline, hyphen and dot]: %output_filename_prefix%
 set /p "output_extension=Output file extension (default: "mp4") [allowed: "mp4", "mkv", "webm"]: "
 if "%output_extension%"=="" (
-    set "output_extension=mp4"
-) && goto start_transcoding_task
+    set "output_extension=mp4" && goto start_transcoding_task
+)
 if not "%output_extension%"=="mp4" if not "%output_extension%"=="mkv" if not "%output_extension%"=="webm" (
     goto extension_choice
 )
@@ -66,12 +65,9 @@ echo.
 rem Runs transcoding using the "libsvtav1" codec for video and the determined settings for audio
 "ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -c:a %audio_codec% -b:a %audio_bitrate%k -y "%output_filepath%" -hide_banner -stats -loglevel warning
 if errorlevel 0 (
-    echo. && echo [success] File transcoding completed: "%output_filepath%"
-    "nircmd.exe" moverecyclebin "%input_file_path%"
-    goto endapp
+    echo. && echo [success] File transcoding completed: "%output_filepath%" && "nircmd.exe" moverecyclebin "%input_file_path%" && goto endapp
 ) else (
-    echo. && echo [error] File transcoding failed.
-    goto endapp
+    echo. && echo [error] File transcoding failed. && goto endapp
 )
 
 :endapp
