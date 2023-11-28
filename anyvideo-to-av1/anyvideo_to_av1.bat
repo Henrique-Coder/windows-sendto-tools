@@ -62,7 +62,7 @@ echo [info] Audio codec: "%audio_codec%"
 echo [info] Audio bitrate: "%audio_bitrate%kbps"
 echo.
 
-rem Runs transcoding using the "libsvtav1" codec for video and the determined settings for audio
+rem Runs transcoding using the chosen AV1 codec for video and the given settings for audio
 "ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -c:a %audio_codec% -b:a %audio_bitrate%k -y "%output_filepath%" -hide_banner -stats -loglevel warning
 if errorlevel 0 (
     echo. && echo [success] File transcoding completed: "%output_filepath%" && "nircmd.exe" moverecyclebin "%input_file_path%" && goto endapp
