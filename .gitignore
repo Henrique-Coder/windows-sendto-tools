@@ -6,7 +6,7 @@ __pycache__
 # Custom directories
 # ...
 
-# Custom files
+# Custom extensions/files
 *.py
 *.svg
 *.txt
