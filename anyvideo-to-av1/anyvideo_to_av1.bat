@@ -27,7 +27,7 @@ if errorlevel 1 (
 rem Set video codec, audio codec and audio bitrate
 set "video_codec=libsvtav1"
 set "audio_codec=libopus"
-set "audio_bitrate=128"
+set "audio_bitrate=192"
 
 rem Set output file name prefix
 :output_filename_prefix_choice
