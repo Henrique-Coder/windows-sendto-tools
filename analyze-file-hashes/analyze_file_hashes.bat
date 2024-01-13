@@ -18,7 +18,9 @@ for %%A in (MD5 SHA1 SHA256 SHA384 SHA512) do (
     echo     !count!. %%A: !hash_%%A!
 )
 
+rem Pause the script to show the hashes and wait for the user to press any key to close the window
+pause >nul 2>&1 && goto endapp
+
 :endapp
 endlocal
-timeout /t 5 >nul 2>&1
 exit /b %errorlevel%
