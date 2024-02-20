@@ -50,7 +50,7 @@ if not "%output_extension%"=="mp4" if not "%output_extension%"=="mkv" if not "%o
 rem Set output file audio bitrate
 :output_filename_audio_bitrate
 cls && echo. && echo Output filename prefix (default: %default_output_filename_prefix%) [allowed: alphanumeric, underline, hyphen and dot]: %output_filename_prefix% && echo Output file extension (default: mp4) [allowed: mp4, mkv, webm]: %output_extension%"
-set /p "audio_bitrate=Output filename audio bitrate (default: "%default_output_filename_prefix%") [allowed: numeric]: "
+set /p "audio_bitrate=Output filename audio bitrate (default: %audio_bitrate%) [allowed: numeric]: "
 if "%audio_bitrate%"=="" (
     set "audio_bitrate=%audio_bitrate%" && goto start_transcoding_task
 )
