@@ -27,7 +27,7 @@ if errorlevel 1 (
 rem Set video codec, audio codec and audio bitrate
 set "video_codec=libsvtav1"
 set "audio_codec=libopus"
-set "audio_bitrate=256"
+set "audio_bitrate=128"
 
 rem Set output file name prefix
 :output_filename_prefix_choice
@@ -71,7 +71,7 @@ echo [info] Audio bitrate: "%audio_bitrate%" (kbps)
 echo.
 
 rem Runs transcoding using the chosen AV1 codec for video and the given settings for audio
-"ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -c:a %audio_codec% -b:a %audio_bitrate%k -q:a 0 -y "%output_filepath%" -hide_banner -stats -loglevel warning
+"ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -c:a %audio_codec% -b:a %audio_bitrate%k -q:a 0 -y -stats -hide_banner -loglevel warning "%output_filepath%"
 if errorlevel 0 (
     echo. && echo [success] File transcoding completed: "%output_filepath%" && "nircmd.exe" moverecyclebin "%input_file_path%" && goto endapp
 ) else (
