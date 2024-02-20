@@ -15,7 +15,7 @@ set "count=0"
 for %%A in (MD5 SHA1 SHA256 SHA384 SHA512) do (
     set /a "count+=1"
     for /f %%B in ('powershell -Command "(Get-FileHash -Path '!input_file_path!' -Algorithm %%A).Hash"') do set "hash_%%A=%%B"
-    echo     !count!. %%A: !hash_%%A!
+    echo   !count!. %%A: !hash_%%A!
 )
 
 rem Pause the script to show the hashes and wait for the user to press any key to close the window
