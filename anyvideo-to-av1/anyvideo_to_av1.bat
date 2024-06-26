@@ -62,7 +62,7 @@ cls && set "output_filepath=%~dp1%~n1%output_filename_prefix%.%output_extension%
 rem Show transcoding information
 echo. && echo [info] Starting file transcoding... && echo.
 echo [info] Input file: "%input_file_path%"
-echo [info] Output file: "%output_filepath%" && echo.
+echo [info] Output file (preview): "%output_filepath%" && echo.
 echo [info] File extension: "%output_extension%"
 echo [info] Video codec: "libsvtav1"
 echo [info] Video bitrate: (same as input)
@@ -71,14 +71,15 @@ echo [info] Audio bitrate: "%audio_bitrate%" (kbps)
 echo.
 
 rem Runs transcoding using the chosen AV1 codec for video and the given settings for audio
-"ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -c:a %audio_codec% -b:a %audio_bitrate%k -q:a 0 -y -stats -hide_banner -loglevel warning "%output_filepath%"
+for /f "tokens=2 delims==" %%a in ('wmic cpu get NumberOfLogicalProcessors /value') do set /a ffmpeg_threads=%%a-1
+"ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -threads %ffmpeg_threads% -preset 9 -crf 32 -svtav1-params lp=%ffmpeg_threads%:fast-decode=0:tune=0:level=0:profile=0:rc=0:pred-struct=2:enable-dg=1 -c:a %audio_codec% -b:a %audio_bitrate%k -y -stats -hide_banner -loglevel warning "%output_filepath%"
 if errorlevel 0 (
     echo. && echo [success] File transcoding completed: "%output_filepath%" && "nircmd.exe" moverecyclebin "%input_file_path%" && goto endapp
 ) else (
-    echo. && echo [error] File transcoding failed. && goto endapp
+    echo. && echo [error] File transcoding failed. Please check the error message above. && goto endapp
 )
 
 :endapp
 endlocal
-timeout /t 5 >nul 2>&1
+timeout /t 10 >nul 2>&1
 exit /b %errorlevel%
