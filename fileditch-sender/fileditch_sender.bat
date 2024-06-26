@@ -5,6 +5,39 @@ setlocal EnableDelayedExpansion
 rem Set terminal title
 title Fileditch Sender - Developed at gh@Henrique-Coder/windows-sendto-tools
 
+rem Check if a file is provided as an argument
+if "%~1"=="" (
+    echo Error: No file specified.
+    goto endapp
+)
+
+rem Check if the file has an extension and disallow certain extensions
+set "valid_extensions=exe bat cmd vbs 7z"
+set "file_extension=%~x1"
+if "%file_extension%"=="" (
+    echo Error: File has no extension. Upload aborted.
+    goto endapp
+)
+
+rem Validate against disallowed extensions
+for %%E in (%valid_extensions%) do (
+    if /i "%file_extension:~1%"=="%%E" (
+        echo Error: Uploading files with extension ".%%E" is not allowed.
+        goto endapp
+    )
+)
+
+rem Ask the user if they want to upload the file permanently
+echo. && set /p "permanent_upload=Do you want to upload the file permanently? (0 = No (default), 1 = Yes) "
+if not defined permanent_upload set "permanent_upload=0"
+
+rem Setting up the upload type and the corresponding strings
+if !permanent_upload! equ 0 (
+    set "upload_type=/temp/" && set "upload_long_string=Temporary FileDitch URL (expires in 72h)" && set "upload_word=temporary"
+) else (
+    set "upload_type=/" && set "upload_long_string=Permanent FileDitch URL (never expires)" && set "upload_word=permanent"
+)
+
 rem Ensure that 'curl' is installed and available in the PATH
 where curl >nul 2>&1
 if errorlevel 1 (
@@ -17,11 +50,11 @@ cls
 echo.
 echo + -- - Developer: https://github.com/Henrique-Coder - -- +
 echo.
-echo -- --- - Uploading status - --- --
+echo -- --- - Uploading Status (!upload_long_string!) - --- --
 echo.
 
 rem Set the initial value for the filename
-set "filename=%temp%\temp_fileditch_response.json"
+set "filename=%temp%\_temp_fileditch_response.json"
 
 rem Remove the temporary file, if it exists
 del /f /q "%filename%" >nul 2>&1
@@ -32,7 +65,7 @@ set /a filesize_kb=!filesize_b! / 1024
 set /a filesize_mb=!filesize_kb! / 1024
 
 rem Uploading the file, getting the direct link, and copying it to the clipboard
-curl -i -F "files[]=@%~1" https://up1.fileditch.com/upload.php | findstr "\"url\"" > "%filename%"
+curl -i -F "files[]=@%~1" https://up1.fileditch.com%upload_type%upload.php | findstr "\"url\"" > "%filename%"
 if errorlevel 1 (
     echo Error: Failed to upload the file. Please check your internet connection and try again later.
     goto endapp
@@ -51,9 +84,9 @@ echo !output_url! | clip >nul 2>&1
 del /f /q "%filename%" >nul 2>&1
 
 echo.
-echo -- --- - The direct url was copied to the clipboard - --- --
+echo -- --- - The direct !upload_word! url was copied to the clipboard - --- --
 echo.
-echo + Pathfile: "%~1"
+echo + Filepath: %~1
 echo + URL: !output_url!
 echo.
 
