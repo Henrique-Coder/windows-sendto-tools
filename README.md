@@ -33,15 +33,15 @@
 
 ### Available Tools
 
-- **[analyze-file-hashes](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/analyze-file-hashes)**: Returns the MD5, SHA1, SHA256, SHA384 and SHA512 hashes of the chosen file.
-- **[anyvideo-to-av1](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/anyvideo-to-av1)**: Quickly transcodes any video file to the `libsvtav1` (AV1) and `libopus` (OPUS) codecs with the best parameters for efficient compression.
-- **[fileditch-sender](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/fileditch-sender)**: Sends the chosen file to the file hosting service [FileDitch](https://fileditch.com). Supports [permanent](https://fileditch.com) and [temporary](https://fileditch.com/temp.html) file uploads. When the upload is finished, the direct url is automatically displayed and copied to your clipboard.
+- **[analyze-file-hashes](https://github.com/henrique-coder/windows-sendto-tools/tree/main/analyze-file-hashes)**: Returns the MD5, SHA1, SHA256, SHA384 and SHA512 hashes of the chosen file.
+- **[anyvideo-to-av1](https://github.com/henrique-coder/windows-sendto-tools/tree/main/anyvideo-to-av1)**: Quickly transcodes any video file to the `libsvtav1` (AV1) and `libopus` (OPUS) codecs with the best parameters for efficient compression.
+- **[fileditch-sender](https://github.com/henrique-coder/windows-sendto-tools/tree/main/fileditch-sender)**: Sends the chosen file to the file hosting service [FileDitch](https://fileditch.com). Supports [permanent](https://fileditch.com) and [temporary](https://fileditch.com/temp.html) file uploads. When the upload is finished, the direct url is automatically displayed and copied to your clipboard.
 
 ### Installation from source code
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Henrique-Coder/windows-sendto-tools.git
+git clone https://github.com/henrique-coder/windows-sendto-tools.git
 
 # 2. Change the directory
 cd windows-sendto-tools
@@ -58,9 +58,9 @@ sendto_install.bat
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have any suggestions that could improve this project, please [fork](https://github.com/Henrique-Coder/windows-sendto-tools/fork) the repository and open a pull request. Or simply open an [issue](https://github.com/Henrique-Coder/windows-sendto-tools/issues/new) and describe your ideas or let us know what bugs you've found. Don't forget to give the project a star. Thanks again!
+If you have any suggestions that could improve this project, please [fork](https://github.com/henrique-coder/windows-sendto-tools/fork) the repository and open a pull request. Or simply open an [issue](https://github.com/henrique-coder/windows-sendto-tools/issues/new) and describe your ideas or let us know what bugs you've found. Don't forget to give the project a star. Thanks again!
 
-1. Fork the project at https://github.com/Henrique-Coder/windows-sendto-tools/fork
+1. Fork the project at https://github.com/henrique-coder/windows-sendto-tools/fork
 2. Create your feature branch ・ `git checkout -b feature/{feature_name}`
 3. Commit your changes ・ `git commit -m "{commit_message}"`
 4. Push to the branch ・ `git push origin feature/{feature_name}`
@@ -68,8 +68,8 @@ If you have any suggestions that could improve this project, please [fork](https
 
 ### License
 
-Distributed under the **MIT License**. See [LICENSE](https://github.com/Henrique-Coder/windows-sendto-tools/blob/main/LICENSE) for more information.
+Distributed under the **MIT License**. See [LICENSE](https://github.com/henrique-coder/windows-sendto-tools/blob/main/LICENSE) for more information.
 
 ### Disclaimer
 
-Please note that this project is still under development and may contain errors or incomplete functionality. If you encounter any problems, feel free to open an [issue](https://github.com/Henrique-Coder/windows-sendto-tools/issues/new) and describe the problem you are facing. Your feedback is very important to us.
+Please note that this project is still under development and may contain errors or incomplete functionality. If you encounter any problems, feel free to open an [issue](https://github.com/henrique-coder/windows-sendto-tools/issues/new) and describe the problem you are facing. Your feedback is very important to us.
