@@ -62,4 +62,4 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Henrique-Cod
 
 ### Disclaimer
 
-Please note that this project is still under development and may contain errors or incomplete functionality. If you encounter any problems, feel free to open an [issue](https://github.com/Henrique-Coder/windows-sendto-tools/issues/new) in the GitHub repository.
+Please note that this project is still under development and may contain errors or incomplete functionality. If you encounter any problems, feel free to open an [issue](https://github.com/Henrique-Coder/windows-sendto-tools/issues/new) and describe the problem you are facing. Your feedback is very important to us.
