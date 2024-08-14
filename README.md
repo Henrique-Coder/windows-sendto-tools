@@ -25,7 +25,7 @@ Scripts developed in batch to be used in the Windows SendTo folder. The scripts 
 - **[anyvideo-to-av1](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/anyvideo-to-av1)**: Quickly transcodes any video file to the `libsvtav1` (AV1) and `libopus` (OPUS) codecs with the best parameters for efficient compression.
 - **[fileditch-sender](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/fileditch-sender)**: Sends the chosen file to the file hosting service [FileDitch](https://fileditch.com). Supports [permanent](https://fileditch.com) and [temporary](https://fileditch.com/temp.html) file uploads. When the upload is finished, the direct url is automatically displayed and copied to your clipboard.
 
-### Installation
+### Installation from source code
 
 ```bash
 # 1. Clone the repository
@@ -56,7 +56,7 @@ If you have any suggestions that could improve this project, please [fork](https
 
 ### License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/Henrique-Coder/windows-sendto-tools/blob/main/LICENSE) for more information.
+Distributed under the **MIT License**. See [LICENSE](https://github.com/Henrique-Coder/windows-sendto-tools/blob/main/LICENSE) for more information.
 
 ### Disclaimer
 
