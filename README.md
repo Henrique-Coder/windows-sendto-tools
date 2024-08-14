@@ -1,5 +1,3 @@
-
-
 ## SendTo Tools for Windows
 
 ![GitHub Created At](https://img.shields.io/github/created-at/henrique-coder/windows-sendto-tools?style=for-the-badge&logoColor=white&labelColor=gray&color=white)
