@@ -6,7 +6,7 @@
 
 Scripts developed in batch to be used in the Windows SendTo folder. The scripts are used to automate tasks that are usually done manually.
 
-#### Important Notes
+#### Features
 
 - Built with [Batch](https://wikipedia.org/wiki/Batch_file).
 - Works on Windows 10 and later versions.
