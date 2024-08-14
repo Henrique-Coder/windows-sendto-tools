@@ -72,7 +72,7 @@ echo.
 
 rem Runs transcoding using the chosen AV1 codec for video and the given settings for audio
 for /f "tokens=2 delims==" %%a in ('wmic cpu get NumberOfLogicalProcessors /value') do set /a ffmpeg_threads=%%a-1
-"ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -threads %ffmpeg_threads% -preset 9 -crf 32 -svtav1-params lp=%ffmpeg_threads%:fast-decode=0:tune=0:level=0:profile=0:rc=0:pred-struct=2:enable-dg=1 -c:a %audio_codec% -b:a %audio_bitrate%k -y -stats -hide_banner -loglevel warning "%output_filepath%"
+"ffmpeg.exe" -i "%input_file_path%" -c:v %video_codec% -threads %ffmpeg_threads% -preset 9 -svtav1-params lp=%ffmpeg_threads%:fast-decode=0:tune=0:level=0:profile=0:rc=0:pred-struct=2:enable-dg=1 -c:a %audio_codec% -b:a %audio_bitrate%k -y -stats -hide_banner -loglevel warning "%output_filepath%"
 if errorlevel 0 (
     echo. && echo [success] File transcoding completed: "%output_filepath%" && "nircmd.exe" moverecyclebin "%input_file_path%" && goto endapp
 ) else (
