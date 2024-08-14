@@ -4,7 +4,7 @@
 __pycache__
 
 # Directories
-.debug
+.internal
 
 # Files
 # ...
@@ -13,7 +13,3 @@ __pycache__
 *.env
 *.py
 *.txt
-*.svg
-*.mp4
-*.mkv
-*.webm
