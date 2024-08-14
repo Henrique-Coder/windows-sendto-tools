@@ -1,10 +1,22 @@
-## SendTo Tools for Windows
+<h2 align="center">Windows SendTo Tools</h2>
 
-![GitHub Created At](https://img.shields.io/github/created-at/henrique-coder/windows-sendto-tools?style=for-the-badge&logoColor=white&labelColor=gray&color=white)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/henrique-coder/windows-sendto-tools?style=for-the-badge&logoColor=white&labelColor=gray&color=white)
-![GitHub last commit](https://img.shields.io/github/last-commit/henrique-coder/windows-sendto-tools?style=for-the-badge&logoColor=white&labelColor=gray&color=white)
+<p align="center">
+    <img src="icon.ico" alt="favicon" width="64" height="64">
+</p>
 
-Scripts developed in batch to be used in the Windows SendTo folder. The scripts are used to automate tasks that are usually done manually.
+<br>
+
+<p align="center">
+    <img src="https://img.shields.io/github/created-at/henrique-coder/windows-sendto-tools?style=for-the-badge&logoColor=white&labelColor=gray&color=white" alt="GitHub Created At">
+    <img src="https://img.shields.io/github/commit-activity/m/henrique-coder/windows-sendto-tools?style=for-the-badge&logoColor=white&labelColor=gray&color=white" alt="GitHub commit activity">
+    <img src="https://img.shields.io/github/last-commit/henrique-coder/windows-sendto-tools?style=for-the-badge&logoColor=white&labelColor=gray&color=white" alt="GitHub last commit">
+</p>
+
+<p align="center">
+    Scripts developed in batch to be used in the Windows SendTo folder. The scripts are used to automate tasks that are usually done manually.
+</p>
+
+<br>
 
 #### Features
 
