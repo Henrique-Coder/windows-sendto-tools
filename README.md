@@ -20,22 +20,19 @@
 
 #### Features
 
-- Built with [Batch](https://wikipedia.org/wiki/Batch_file).
-- Works on Windows 10 and later versions.
-- Every script has its own requirements and instructions for use.
-- The scripts are designed to be used in the Windows SendTo folder. The SendTo folder is a hidden folder located at `C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\SendTo`.
+- **[analyze-file-hashes](https://github.com/henrique-coder/windows-sendto-tools/tree/main/analyze-file-hashes)**: Returns the MD5, SHA1, SHA256, SHA384 and SHA512 hashes of the chosen file.
+- **[anyvideo-to-av1](https://github.com/henrique-coder/windows-sendto-tools/tree/main/anyvideo-to-av1)**: Quickly transcodes any video file to the `libsvtav1` (AV1) and `libopus` (OPUS) codecs with the best parameters for efficient compression.
+- **[fileditch-sender](https://github.com/henrique-coder/windows-sendto-tools/tree/main/fileditch-sender)**: Sends the chosen file to the file hosting service [FileDitch](https://fileditch.com). Supports [permanent](https://fileditch.com) and [temporary](https://fileditch.com/temp.html) file uploads. When the upload is finished, the direct url is automatically displayed and copied to your clipboard.
+
+#### How was it done?
+
+- Built with [Batch](https://wikipedia.org/wiki/Batch_file) and [PowerShell](https://wikipedia.org/wiki/PowerShell).
 
 #### Prerequisites
 
 - [Windows 10](https://www.microsoft.com/windows/get-windows-10) or later.
+- [PowerShell](https://learn.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-on-windows) (optional).
 - [Git](https://gitforwindows.org) (optional).
-- [PowerShell](https://wikipedia.org/wiki/PowerShell) (optional).
-
-### Available Tools
-
-- **[analyze-file-hashes](https://github.com/henrique-coder/windows-sendto-tools/tree/main/analyze-file-hashes)**: Returns the MD5, SHA1, SHA256, SHA384 and SHA512 hashes of the chosen file.
-- **[anyvideo-to-av1](https://github.com/henrique-coder/windows-sendto-tools/tree/main/anyvideo-to-av1)**: Quickly transcodes any video file to the `libsvtav1` (AV1) and `libopus` (OPUS) codecs with the best parameters for efficient compression.
-- **[fileditch-sender](https://github.com/henrique-coder/windows-sendto-tools/tree/main/fileditch-sender)**: Sends the chosen file to the file hosting service [FileDitch](https://fileditch.com). Supports [permanent](https://fileditch.com) and [temporary](https://fileditch.com/temp.html) file uploads. When the upload is finished, the direct url is automatically displayed and copied to your clipboard.
 
 ### Installation from source code
 
@@ -48,10 +45,10 @@ cd windows-sendto-tools
 
 # 3. Choose the script you want to use and run the sendto_install.bat file that will be inside the folder of the chosen script. Example:
 cd fileditch-sender
-sendto_install.bat
+start sendto_install.bat
 
-# 4.1 The installer will automatically install the script in the SendTo directory in your Windows.
-# 4.2 That's all, now just use the new tool from the Windows explorer context menu.
+# 4.1. The installer will automatically install the script in the SendTo directory (C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\SendTo) in your Windows.
+# 4.2. That's all, now just use the new tool from the Windows explorer context menu. Remember that each script can have external dependencies, if you don't have any, the script will display an error in the terminal, then you just need to install it and everything will be fine.
 ```
 
 ### Contributing
