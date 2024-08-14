@@ -24,7 +24,7 @@ Scripts developed in batch to be used in the Windows SendTo folder. The scripts 
 ### Available Tools
 
 - **[analyze-file-hashes](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/analyze-file-hashes)**: Returns the MD5, SHA1, SHA256, SHA384 and SHA512 hashes of the chosen file.
-- **[anyvideo-to-av1](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/anyvideo-to-av1)**: Quickly transcodes any video file to the `libsvtav1` (AV1) codec with the best parameters for efficient compression.
+- **[anyvideo-to-av1](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/anyvideo-to-av1)**: Quickly transcodes any video file to the `libsvtav1` (AV1) and `libopus` (OPUS) codecs with the best parameters for efficient compression.
 - **[fileditch-sender](https://github.com/Henrique-Coder/windows-sendto-tools/tree/main/fileditch-sender)**: Sends the chosen file to the file hosting service [FileDitch](https://fileditch.com). Supports [permanent](https://fileditch.com) and [temporary](https://fileditch.com/temp.html) file uploads. When the upload is finished, the direct url is automatically displayed and copied to your clipboard.
 
 ### Installation
